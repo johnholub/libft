@@ -12,9 +12,11 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 100
 
 # include <string.h>
 # include <unistd.h>
+# include <fcntl.h>
 # include <stdlib.h>
 
 typedef struct		s_list
@@ -88,5 +90,8 @@ char				**ft_strsplit(char const *s, char c);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strtrim(char const *s);
 char				*ft_itoa(int n);
+char				*ft_realloc(char *ptr, int size);
+int					get_next_line(const int fd, char **line);
+int					ft_atoi_base(char *nb, int base);
 
 #endif
